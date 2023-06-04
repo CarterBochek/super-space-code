@@ -1,0 +1,102 @@
+/*Setting the initial background color*/
+body {
+    background: linear-gradient(rgb(39, 0, 83), #410196, rgb(111, 0, 255));
+    background-attachment: fixed;
+}
+.loading-text {
+    /* background-color: #9198e5; */
+    padding: 5vh 50vw;
+    color: white;
+    /*Animating the main heading every 3 seconds */
+    animation: text-animation 3s infinite;
+}
+@keyframes text-animation {
+    0% {
+        opacity: 0;
+        /* transform: translateY(-10px); */
+      }
+    
+      50% {
+        opacity: 1;
+        /* transform: translateY(0); */
+      }
+    
+      100% {
+        opacity: 0;
+        /* transform: translateY(10px); */
+      }
+}
+main {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: none;
+    overflow: hidden;
+    height: 40em;
+    position: relative;
+}
+.main-planet {
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em;
+    box-shadow: 4px 4px 2px rgb(176, 50, 248);
+    background-color: cyan;
+    background-attachment: fixed;
+    border-radius: 50%;
+}
+.main-planet::after {
+    border-radius: 0%;
+}
+.second-planet,.third-planet {
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+}
+.second-planet {
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    animation: orbit 36.5s linear infinite;
+}
+.third-planet {
+    top: 0;
+    right: 0;
+    width: 8em;
+    height: 8em;
+    margin: 5vh;
+    animation: orbit 2s linear infinite;
+}
+.second-planet::before,
+.third-planet::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+.second-planet::before {
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    background: linear-gradient(rgb(23, 83, 0), #01961a, rgb(102, 255, 0));
+    background-attachment: fixed;
+}
+.third-planet::before {
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background: linear-gradient(rgb(39, 0, 83), #410196, rgb(111, 0, 255));
+    background-attachment: fixed;
+}
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
